@@ -4,6 +4,7 @@
 *
 * php Form Validation class.Developed By Mohamed Mbarki
 *
+* @author : Mohamed Mbarki 
 * Twitter : @mbarki2009
 *
 **/
@@ -195,6 +196,23 @@ class Form_validator {
             }
 
 
+	}
+
+       // validate  5 digit (eg-12344) or 5 digit-4 digit (eg- 12345-2323) zipcode  field
+	function isZipcode($field)
+	{
+	  $value = $this->_getvalue($field);
+	  $pattern = "/^\d{5}([\-]\d{4})?$/";
+	  if(preg_match($pattern, $value))
+	  {
+		return TRUE;
+	  }
+	  else
+	  {
+		echo 'Please enter a valid zipcode' ;
+		return FALSE;
+	  }
+	
 	}
 
 }
