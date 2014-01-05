@@ -24,28 +24,24 @@ class Form_validator {
 	function isPassword($field) 
 	{
 
-       $password = $this->_getvalue($field);
+           $password = $this->_getvalue($field);
+           if(strlen($password) < 8  || strlen($password) > 25) 
+           {
+       	      echo 'Password Must be between 8 and 25 !' ; 
+              return FALSE;
+           }
 
-       if(strlen($password) < 8  || strlen($password) > 25) 
-       {
+           if(!preg_match(“/\d/”, $password)) 
+           {
+               return FALSE;
+           }
 
-       	   echo 'Password Must be between 8 and 25 !' ; 
-           return FALSE;
-       }
+           if(!preg_match(“/[a-z]/i”, $password)) 
+           {
+               return FALSE;
+           }
 
-       if(!preg_match(“/\d/”, $password)) 
-       {
-
-           return FALSE;
-       }
-
-       if(!preg_match(“/[a-z]/i”, $password)) 
-       {
-
-           return FALSE;
-       }
-
-    }
+        }
 
 
 
@@ -69,10 +65,10 @@ class Form_validator {
 
        else
        {
-       	return TRUE ; 
+       	     return TRUE ; 
        }
       
-      }  
+    }  
 
 
 
@@ -89,30 +85,27 @@ class Form_validator {
 
        else
        {
-
-       	return TRUE ; 
+       	 return TRUE ; 
        }
       
     }
 
 
     function isNumber($field)
-	{
-		$value = $this->_getvalue($field);
+    {
+	$value = $this->_getvalue($field);
 		
-		if(!is_numeric($value))
-		{
-			echo 'please enter a valid '.$field.'!' ; 
-
-			return FALSE ; 
-
-		}
-		else
-		{
-			return TRUE;
-		}
-	
+	if(!is_numeric($value))
+	{
+	   echo 'please enter a valid '.$field.'!' ; 
+           return FALSE ; 
 	}
+	else
+	{
+           return TRUE;
+	}
+	
+    }
 
 
 
@@ -162,12 +155,12 @@ class Form_validator {
 	function isTwitter($field)
 	{
 
-		$value     = $this->_getvalue($field); 
+	    $value     = $this->_getvalue($field); 
 	    $position1 = strpos($value, "twitter.com");
 	    $position2 = strpos($value, "http://twitter.com");
 	    $position3 = strpos($value, "http://www.twitter.com");
 
-        if($position1 !== 1 || $postion2 !== 1 || $position3 !== 1)
+             if($position1 !== 1 || $postion2 !== 1 || $position3 !== 1)
 		{
 			echo 'please enter a valid twitter Url .'
 			return FALSE;
@@ -187,19 +180,19 @@ class Form_validator {
 	function isGithub($field)
 	{
 
-		$value     = $this->_getvalue($field);  
+	    $value     = $this->_getvalue($field);  
 	    $position1 = strpos($value, "github.com");
 	    $position2 = strpos($value, "http://github.com");
-        $position3 = strpos($value, "http://www.github.com");
-        if($position1 !== 1 || $postion2 !== 1 || $position3 !== 1)
-		{
-			echo 'please enter a valid Github Url .'
-			return FALSE;
-		}
-		else
-		{
-			return TRUE;
-		}
+            $position3 = strpos($value, "http://www.github.com");
+            if($position1 !== 1 || $postion2 !== 1 || $position3 !== 1)
+	    {
+		echo 'please enter a valid Github Url .'
+		return FALSE;
+	    }
+	    else
+	    {
+		return TRUE;
+            }
 
 
 	}
