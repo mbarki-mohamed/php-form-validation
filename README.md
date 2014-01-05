@@ -1,5 +1,5 @@
-php-form-validation
-===================
+php form validation class
+========================
 
 A php class to easily validate your forms .
 
