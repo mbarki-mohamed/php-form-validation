@@ -6,6 +6,7 @@
 *
 * @author : Mohamed Mbarki 
 * Twitter : @mbarki2009
+* MIT  Licence .
 *
 **/
 
@@ -54,8 +55,8 @@ class Form_validator {
 
        if(strlen($value) < $minlength)
        {
-          echo $field.' length must be more than '.$minlength.' !' ;
-          return FALSE ;     
+              echo $field.' length must be more than '.$minlength.' !' ;
+              return FALSE ;     
        }
        
        elseif (strlen($value) > $maxlength)
