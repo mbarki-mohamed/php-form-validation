@@ -134,12 +134,12 @@ class Form_validator {
 
 	function isFacebook($field)
 	{
-		$value     = $this->_getvalue($field);	  
+            $value     = $this->_getvalue($field);	  
 	    $position1 = strpos($value, "facebook.com");
 	    $position2 = strpos($value, "http://facebook.com");
-        $position3 = strpos($value, "http://www.facebook.com");
-
-        if($position1 !== 1 || $postion2 !== 1 || $position3 !== 1)
+            $position3 = strpos($value, "http://www.facebook.com");
+  
+           if($position1 !== 1 || $postion2 !== 1 || $position3 !== 1)
 		{
 			echo 'Please enter a valid facebook Url .' ; 
 			return FALSE;
