@@ -14,7 +14,6 @@
 class Form_validator {
 	
 
-
 	function _getvalue($field)
 	{
 		$value = $_POST[$field];
