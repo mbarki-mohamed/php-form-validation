@@ -1,6 +1,4 @@
 <?php
-
-
 /**
 *
 * php Form Validation class.Developed By Mohamed Mbarki
@@ -10,6 +8,7 @@
 * MIT  Licence .
 *
 **/
+
 
 
 class Form_validator {
