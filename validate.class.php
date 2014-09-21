@@ -22,7 +22,6 @@ class Form_validator {
 	}
 
 
-
 	function isPassword($field) 
 	{
 
